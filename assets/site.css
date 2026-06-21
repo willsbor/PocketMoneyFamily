@@ -146,6 +146,55 @@ a {
   border-color: var(--border);
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid var(--border);
+}
+
+.lang-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 160ms ease;
+}
+
+.lang-toggle button[aria-pressed="true"] {
+  background: var(--brand);
+  color: #fff;
+}
+
+.lang-toggle button:hover {
+  color: var(--brand-strong);
+}
+
+html[data-lang="en"] [data-lang-block="zh"],
+html:not([data-lang]) [data-lang-block="en"],
+html[data-lang="zh"] [data-lang-block="en"] {
+  display: none;
+}
+
+html[data-lang="en"] [data-lang-block="en"] {
+  display: revert;
+}
+
+.language-note {
+  margin-top: 14px;
+  color: var(--brand-strong);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .hero,
 .panel,
 .card,
@@ -398,6 +447,10 @@ th {
 
   .nav {
     justify-content: flex-start;
+  }
+
+  .lang-toggle {
+    align-self: flex-start;
   }
 }
 

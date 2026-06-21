@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>支援 - PocketMoney Family</title>
     <meta name="description" content="PocketMoney Family 支援資訊與聯絡方式。">
+    <script>
+      try {
+        const savedLanguage = localStorage.getItem("pocketmoneyfamily-language");
+        if (savedLanguage === "en" || savedLanguage === "zh") {
+          document.documentElement.dataset.lang = savedLanguage;
+          document.documentElement.lang = savedLanguage === "en" ? "en" : "zh-Hant";
+        }
+      } catch (_) {}
+    </script>
     <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -15,35 +25,55 @@
             <div class="brand-mark">PF</div>
             <div class="brand-text">
               <strong>PocketMoney Family</strong>
-              <span>支援中心</span>
+              <span data-lang-block="zh">支援中心</span>
+              <span data-lang-block="en">Support center</span>
             </div>
           </a>
           <nav class="nav" aria-label="主要導覽">
-            <a href="../">首頁</a>
-            <a href="../privacy/">隱私權政策</a>
-            <a href="../privacy-choices/">資料選擇權</a>
-            <a href="../delete-account/">刪除帳號</a>
-            <a href="../support/" aria-current="page">支援</a>
+            <a href="../" data-lang-block="zh">首頁</a>
+            <a href="../privacy/" data-lang-block="zh">隱私權政策</a>
+            <a href="../privacy-choices/" data-lang-block="zh">資料選擇權</a>
+            <a href="../delete-account/" data-lang-block="zh">刪除帳號</a>
+            <a href="../support/" data-lang-block="zh" aria-current="page">支援</a>
+            <a href="../" data-lang-block="en">Home</a>
+            <a href="../privacy/" data-lang-block="en">Privacy Policy</a>
+            <a href="../privacy-choices/" data-lang-block="en">Privacy Choices</a>
+            <a href="../delete-account/" data-lang-block="en">Delete Account</a>
+            <a href="../support/" data-lang-block="en" aria-current="page">Support</a>
           </nav>
+          <div class="lang-toggle" role="group" aria-label="Language switch">
+            <button type="button" data-lang-switch="zh">中文</button>
+            <button type="button" data-lang-switch="en">English</button>
+          </div>
         </header>
 
         <main>
           <section class="hero">
             <div class="hero-copy">
-              <div class="eyebrow">Support</div>
-              <h1>支援與聯絡方式</h1>
-              <p>
-                這裡放使用者問題與帳號管理相關的聯絡資訊，方便公開存取。
-              </p>
+              <div class="eyebrow" data-lang-block="zh">Support</div>
+              <div class="eyebrow" data-lang-block="en">Support</div>
+              <h1 data-lang-block="zh">支援與聯絡方式</h1>
+              <h1 data-lang-block="en">Support and contact details</h1>
+              <p data-lang-block="zh">這裡放使用者問題與帳號管理相關的聯絡資訊，方便公開存取。</p>
+              <p data-lang-block="en">This page provides contact details for user questions and account management.</p>
+              <p class="language-note" data-lang-block="en">English view. Traditional Chinese is the primary language of this site.</p>
             </div>
             <div class="hero-panel">
-              <div class="stat">
+              <div class="stat" data-lang-block="zh">
                 <strong>Email</strong>
                 <span><a href="mailto:willsbormac@gmail.com">willsbormac@gmail.com</a></span>
               </div>
-              <div class="stat">
-                <strong>Service Area</strong>
+              <div class="stat" data-lang-block="en">
+                <strong>Email</strong>
+                <span><a href="mailto:willsbormac@gmail.com">willsbormac@gmail.com</a></span>
+              </div>
+              <div class="stat" data-lang-block="zh">
+                <strong>服務範圍</strong>
                 <span>App 使用說明、帳號問題、資料刪除。</span>
+              </div>
+              <div class="stat" data-lang-block="en">
+                <strong>Service area</strong>
+                <span>App usage help, account issues, and data deletion.</span>
               </div>
             </div>
           </section>
@@ -51,18 +81,29 @@
           <section class="section">
             <div class="grid two">
               <article class="card">
-                <h3>常見問題</h3>
-                <ul>
+                <h3 data-lang-block="zh">常見問題</h3>
+                <h3 data-lang-block="en">Common questions</h3>
+                <ul data-lang-block="zh">
                   <li>如何重新登入家長帳號。</li>
                   <li>如何綁定小孩帳號與家庭代碼。</li>
                   <li>如何刪除帳號與資料。</li>
                   <li>如果看不到資料，先確認登入的是哪個角色。</li>
                 </ul>
+                <ul data-lang-block="en">
+                  <li>How to sign in again as a parent.</li>
+                  <li>How to bind a child account with a family code.</li>
+                  <li>How to delete an account and related data.</li>
+                  <li>If data is missing, check which role is signed in.</li>
+                </ul>
               </article>
               <article class="card">
-                <h3>常見問題</h3>
-                <p>
+                <h3 data-lang-block="zh">聯絡方式</h3>
+                <h3 data-lang-block="en">Contact</h3>
+                <p data-lang-block="zh">
                   如果你遇到登入、資料同步或帳號刪除問題，請直接來信，我們會協助確認。
+                </p>
+                <p data-lang-block="en">
+                  If you run into sign-in, sync, or account deletion issues, send us an email and we will help investigate.
                 </p>
               </article>
             </div>

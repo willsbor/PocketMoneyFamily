@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PocketMoney Family</title>
     <meta name="description" content="PocketMoney Family 的公開資訊頁，包含隱私權政策、支援、帳號刪除與資料選擇權說明。">
+    <script>
+      try {
+        const savedLanguage = localStorage.getItem("pocketmoneyfamily-language");
+        if (savedLanguage === "en" || savedLanguage === "zh") {
+          document.documentElement.dataset.lang = savedLanguage;
+          document.documentElement.lang = savedLanguage === "en" ? "en" : "zh-Hant";
+        }
+      } catch (_) {}
+    </script>
     <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/site.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -15,79 +25,128 @@
             <div class="brand-mark">PF</div>
             <div class="brand-text">
               <strong>PocketMoney Family</strong>
-              <span>家庭零用錢管理</span>
+              <span data-lang-block="zh">家庭零用錢管理</span>
+              <span data-lang-block="en">Family allowance manager</span>
             </div>
           </a>
           <nav class="nav" aria-label="主要導覽">
-            <a href="privacy/">隱私權政策</a>
-            <a href="privacy-choices/">資料選擇權</a>
-            <a href="delete-account/">刪除帳號</a>
-            <a href="support/">支援</a>
+            <a href="privacy/" data-lang-block="zh">隱私權政策</a>
+            <a href="privacy-choices/" data-lang-block="zh">資料選擇權</a>
+            <a href="delete-account/" data-lang-block="zh">刪除帳號</a>
+            <a href="support/" data-lang-block="zh">支援</a>
+            <a href="privacy/" data-lang-block="en">Privacy Policy</a>
+            <a href="privacy-choices/" data-lang-block="en">Privacy Choices</a>
+            <a href="delete-account/" data-lang-block="en">Delete Account</a>
+            <a href="support/" data-lang-block="en">Support</a>
           </nav>
+          <div class="lang-toggle" role="group" aria-label="Language switch">
+            <button type="button" data-lang-switch="zh">中文</button>
+            <button type="button" data-lang-switch="en">English</button>
+          </div>
         </header>
 
         <main>
           <section class="hero">
             <div class="hero-copy">
-              <div class="eyebrow">PocketMoney Family 公開資訊</div>
-              <h1>家庭零用錢管理的公開資訊中心</h1>
-              <p>
+              <div class="eyebrow" data-lang-block="zh">PocketMoney Family 公開資訊</div>
+              <div class="eyebrow" data-lang-block="en">PocketMoney Family public information</div>
+              <h1 data-lang-block="zh">家庭零用錢管理的公開資訊中心</h1>
+              <h1 data-lang-block="en">Public information hub for PocketMoney Family</h1>
+              <p data-lang-block="zh">
                 這個網站提供 PocketMoney Family 的公開資訊，包括隱私權政策、支援方式、
                 帳號刪除說明與資料選擇權說明。
               </p>
-              <div class="hero-actions">
+              <p data-lang-block="en">
+                This site provides the public information for PocketMoney Family, including the privacy policy,
+                support details, account deletion instructions, and privacy choices.
+              </p>
+              <p class="language-note" data-lang-block="en">English view. Traditional Chinese is the primary language of this site.</p>
+              <div class="hero-actions" data-lang-block="zh">
                 <a class="button primary" href="privacy/">查看隱私權政策</a>
                 <a class="button secondary" href="delete-account/">帳號刪除說明</a>
               </div>
+              <div class="hero-actions" data-lang-block="en">
+                <a class="button primary" href="privacy/">View privacy policy</a>
+                <a class="button secondary" href="delete-account/">Delete account info</a>
+              </div>
             </div>
             <div class="hero-panel" aria-label="網站內容摘要">
-              <div class="stat">
-                <strong>Privacy Policy</strong>
+              <div class="stat" data-lang-block="zh">
+                <strong>隱私權政策</strong>
                 <span>說明資料收集、使用、分享與保存方式。</span>
               </div>
-              <div class="stat">
-                <strong>Support</strong>
+              <div class="stat" data-lang-block="en">
+                <strong>Privacy Policy</strong>
+                <span>Explains how data is collected, used, shared, and retained.</span>
+              </div>
+              <div class="stat" data-lang-block="zh">
+                <strong>支援</strong>
                 <span>提供聯絡方式與常見問題入口。</span>
               </div>
-              <div class="stat">
-                <strong>Account Deletion</strong>
+              <div class="stat" data-lang-block="en">
+                <strong>Support</strong>
+                <span>Provides contact details and a simple FAQ entry point.</span>
+              </div>
+              <div class="stat" data-lang-block="zh">
+                <strong>帳號刪除</strong>
                 <span>說明如何刪除帳號與相關資料。</span>
+              </div>
+              <div class="stat" data-lang-block="en">
+                <strong>Account Deletion</strong>
+                <span>Explains how to delete an account and related data.</span>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <div class="section-header">
+            <div class="section-header" data-lang-block="zh">
               <h2>快速入口</h2>
               <p class="meta">公開頁面都已拆好，方便直接瀏覽。</p>
             </div>
+            <div class="section-header" data-lang-block="en">
+              <h2>Quick links</h2>
+              <p class="meta">The public pages are separated and ready to browse.</p>
+            </div>
             <div class="grid two">
               <article class="card">
-                <h3>隱私權政策</h3>
-                <p>說明我們會收集哪些資料、如何使用、是否與第三方服務互動，以及資料如何刪除。</p>
-                <p><a href="privacy/">前往頁面</a></p>
+                <h3 data-lang-block="zh">隱私權政策</h3>
+                <h3 data-lang-block="en">Privacy Policy</h3>
+                <p data-lang-block="zh">說明我們會收集哪些資料、如何使用、是否與第三方服務互動，以及資料如何刪除。</p>
+                <p data-lang-block="en">Explains what data we collect, how we use it, whether third-party services are involved, and how data is removed.</p>
+                <p data-lang-block="zh"><a href="privacy/">前往頁面</a></p>
+                <p data-lang-block="en"><a href="privacy/">Open page</a></p>
               </article>
               <article class="card">
-                <h3>資料選擇權</h3>
-                <p>說明使用者如何要求刪除帳號、如何聯絡支援，以及後續處理流程。</p>
-                <p><a href="privacy-choices/">前往頁面</a></p>
+                <h3 data-lang-block="zh">資料選擇權</h3>
+                <h3 data-lang-block="en">Privacy Choices</h3>
+                <p data-lang-block="zh">說明使用者如何要求刪除帳號、如何聯絡支援，以及後續處理流程。</p>
+                <p data-lang-block="en">Explains how users can request account deletion, contact support, and understand the next steps.</p>
+                <p data-lang-block="zh"><a href="privacy-choices/">前往頁面</a></p>
+                <p data-lang-block="en"><a href="privacy-choices/">Open page</a></p>
               </article>
               <article class="card">
-                <h3>刪除帳號</h3>
-                <p>適合放 App 內的刪除入口連結，或作為外部參考頁。</p>
-                <p><a href="delete-account/">前往頁面</a></p>
+                <h3 data-lang-block="zh">刪除帳號</h3>
+                <h3 data-lang-block="en">Delete Account</h3>
+                <p data-lang-block="zh">適合放 App 內的刪除入口連結，或作為外部參考頁。</p>
+                <p data-lang-block="en">Useful as the public destination for an in-app delete entry or a reference page.</p>
+                <p data-lang-block="zh"><a href="delete-account/">前往頁面</a></p>
+                <p data-lang-block="en"><a href="delete-account/">Open page</a></p>
               </article>
               <article class="card">
-                <h3>支援</h3>
-                <p>提供聯絡信箱、常見問題與支援資訊。</p>
-                <p><a href="support/">前往頁面</a></p>
+                <h3 data-lang-block="zh">支援</h3>
+                <h3 data-lang-block="en">Support</h3>
+                <p data-lang-block="zh">提供聯絡信箱、常見問題與支援資訊。</p>
+                <p data-lang-block="en">Provides the contact email, FAQs, and support information.</p>
+                <p data-lang-block="zh"><a href="support/">前往頁面</a></p>
+                <p data-lang-block="en"><a href="support/">Open page</a></p>
               </article>
             </div>
           </section>
         </main>
 
         <footer class="footer">
-          <p>最後更新：2026-06-21。若要上線，請把頁面內的聯絡資訊與網址替換成正式值。</p>
+          <p data-lang-block="zh">最後更新：2026-06-21。若要上線，請把頁面內的聯絡資訊與網址替換成正式值。</p>
+          <p data-lang-block="en">Last updated: 2026-06-21. Replace the contact details and URLs with your final values before publishing.</p>
         </footer>
       </div>
     </div>

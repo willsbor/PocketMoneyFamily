@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>資料選擇權 - PocketMoney Family</title>
     <meta name="description" content="PocketMoney Family 使用者資料選擇權與權利說明。">
+    <script>
+      try {
+        const savedLanguage = localStorage.getItem("pocketmoneyfamily-language");
+        if (savedLanguage === "en" || savedLanguage === "zh") {
+          document.documentElement.dataset.lang = savedLanguage;
+          document.documentElement.lang = savedLanguage === "en" ? "en" : "zh-Hant";
+        }
+      } catch (_) {}
+    </script>
     <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -15,35 +25,59 @@
             <div class="brand-mark">PF</div>
             <div class="brand-text">
               <strong>PocketMoney Family</strong>
-              <span>資料選擇權</span>
+              <span data-lang-block="zh">資料選擇權</span>
+              <span data-lang-block="en">Privacy choices</span>
             </div>
           </a>
           <nav class="nav" aria-label="主要導覽">
-            <a href="../">首頁</a>
-            <a href="../privacy/">隱私權政策</a>
-            <a href="../privacy-choices/" aria-current="page">資料選擇權</a>
-            <a href="../delete-account/">刪除帳號</a>
-            <a href="../support/">支援</a>
+            <a href="../" data-lang-block="zh">首頁</a>
+            <a href="../privacy/" data-lang-block="zh">隱私權政策</a>
+            <a href="../privacy-choices/" data-lang-block="zh" aria-current="page">資料選擇權</a>
+            <a href="../delete-account/" data-lang-block="zh">刪除帳號</a>
+            <a href="../support/" data-lang-block="zh">支援</a>
+            <a href="../" data-lang-block="en">Home</a>
+            <a href="../privacy/" data-lang-block="en">Privacy Policy</a>
+            <a href="../privacy-choices/" data-lang-block="en" aria-current="page">Privacy Choices</a>
+            <a href="../delete-account/" data-lang-block="en">Delete Account</a>
+            <a href="../support/" data-lang-block="en">Support</a>
           </nav>
+          <div class="lang-toggle" role="group" aria-label="Language switch">
+            <button type="button" data-lang-switch="zh">中文</button>
+            <button type="button" data-lang-switch="en">English</button>
+          </div>
         </header>
 
         <main>
           <section class="hero">
             <div class="hero-copy">
-              <div class="eyebrow">Privacy Choices</div>
-              <h1>資料選擇權與使用者權利</h1>
-              <p>
+              <div class="eyebrow" data-lang-block="zh">資料選擇權</div>
+              <div class="eyebrow" data-lang-block="en">Privacy choices</div>
+              <h1 data-lang-block="zh">資料選擇權與使用者權利</h1>
+              <h1 data-lang-block="en">Privacy choices and user rights</h1>
+              <p data-lang-block="zh">
                 這個頁面用來說明你可以如何管理自己的資料、刪除帳號，以及如何聯絡我們處理隱私權要求。
               </p>
+              <p data-lang-block="en">
+                This page explains how you can manage your data, delete your account, and contact us about privacy requests.
+              </p>
+              <p class="language-note" data-lang-block="en">English view. Traditional Chinese is the primary language of this site.</p>
             </div>
             <div class="hero-panel">
-              <div class="stat">
+              <div class="stat" data-lang-block="zh">
                 <strong>帳號刪除</strong>
                 <span>可以在 App 內提出刪除請求。</span>
               </div>
-              <div class="stat">
+              <div class="stat" data-lang-block="en">
+                <strong>Account deletion</strong>
+                <span>You can submit a deletion request in the app.</span>
+              </div>
+              <div class="stat" data-lang-block="zh">
                 <strong>資料管理</strong>
                 <span>可檢視、修改、刪除家庭內的管理資料。</span>
+              </div>
+              <div class="stat" data-lang-block="en">
+                <strong>Data management</strong>
+                <span>You can view, edit, and delete family management data.</span>
               </div>
             </div>
           </section>
@@ -51,19 +85,31 @@
           <section class="section">
             <div class="grid two">
               <article class="card">
-                <h3>你可以做什麼</h3>
-                <ul>
+                <h3 data-lang-block="zh">你可以做什麼</h3>
+                <h3 data-lang-block="en">What you can do</h3>
+                <ul data-lang-block="zh">
                   <li>要求刪除帳號與資料。</li>
                   <li>聯絡支援確認刪除進度。</li>
                   <li>檢視家長與家庭內的管理資料。</li>
                 </ul>
+                <ul data-lang-block="en">
+                  <li>Request account and data deletion.</li>
+                  <li>Contact support to check deletion progress.</li>
+                  <li>Check parent and family management data.</li>
+                </ul>
               </article>
               <article class="card">
-                <h3>我們會如何處理</h3>
-                <ul>
+                <h3 data-lang-block="zh">我們會如何處理</h3>
+                <h3 data-lang-block="en">How we handle it</h3>
+                <ul data-lang-block="zh">
                   <li>依 App 內流程或支援請求處理刪除。</li>
                   <li>清理對應的 Firebase Auth / Firestore / 相關關聯資料。</li>
                   <li>若有法律或稽核需求，會在正式政策中說明保留範圍。</li>
+                </ul>
+                <ul data-lang-block="en">
+                  <li>We process deletion through the app flow or a support request.</li>
+                  <li>We clean up related Firebase Auth, Firestore, and linked records.</li>
+                  <li>If there are legal or audit requirements, the final policy will explain retention scope.</li>
                 </ul>
               </article>
             </div>
@@ -71,10 +117,15 @@
 
           <section class="section">
             <div class="note">
-              <h3>聯絡我們</h3>
-              <p>
+              <h3 data-lang-block="zh">聯絡我們</h3>
+              <h3 data-lang-block="en">Contact us</h3>
+              <p data-lang-block="zh">
                 如需提交資料刪除或其他隱私權請求，請寄信到
                 <a href="mailto:willsbormac@gmail.com">willsbormac@gmail.com</a>。
+              </p>
+              <p data-lang-block="en">
+                To submit a data deletion request or other privacy request, email
+                <a href="mailto:willsbormac@gmail.com">willsbormac@gmail.com</a>.
               </p>
             </div>
           </section>

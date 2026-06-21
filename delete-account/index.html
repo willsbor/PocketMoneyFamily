@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>刪除帳號 - PocketMoney Family</title>
     <meta name="description" content="PocketMoney Family 帳號刪除與資料刪除說明。">
+    <script>
+      try {
+        const savedLanguage = localStorage.getItem("pocketmoneyfamily-language");
+        if (savedLanguage === "en" || savedLanguage === "zh") {
+          document.documentElement.dataset.lang = savedLanguage;
+          document.documentElement.lang = savedLanguage === "en" ? "en" : "zh-Hant";
+        }
+      } catch (_) {}
+    </script>
     <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -15,36 +25,61 @@
             <div class="brand-mark">PF</div>
             <div class="brand-text">
               <strong>PocketMoney Family</strong>
-              <span>刪除帳號</span>
+              <span data-lang-block="zh">刪除帳號</span>
+              <span data-lang-block="en">Delete account</span>
             </div>
           </a>
           <nav class="nav" aria-label="主要導覽">
-            <a href="../">首頁</a>
-            <a href="../privacy/">隱私權政策</a>
-            <a href="../privacy-choices/">資料選擇權</a>
-            <a href="../delete-account/" aria-current="page">刪除帳號</a>
-            <a href="../support/">支援</a>
+            <a href="../" data-lang-block="zh">首頁</a>
+            <a href="../privacy/" data-lang-block="zh">隱私權政策</a>
+            <a href="../privacy-choices/" data-lang-block="zh">資料選擇權</a>
+            <a href="../delete-account/" data-lang-block="zh" aria-current="page">刪除帳號</a>
+            <a href="../support/" data-lang-block="zh">支援</a>
+            <a href="../" data-lang-block="en">Home</a>
+            <a href="../privacy/" data-lang-block="en">Privacy Policy</a>
+            <a href="../privacy-choices/" data-lang-block="en">Privacy Choices</a>
+            <a href="../delete-account/" data-lang-block="en" aria-current="page">Delete Account</a>
+            <a href="../support/" data-lang-block="en">Support</a>
           </nav>
+          <div class="lang-toggle" role="group" aria-label="Language switch">
+            <button type="button" data-lang-switch="zh">中文</button>
+            <button type="button" data-lang-switch="en">English</button>
+          </div>
         </header>
 
         <main>
           <section class="hero">
             <div class="hero-copy">
-              <div class="eyebrow">Account Deletion</div>
-              <h1>帳號刪除與資料刪除說明</h1>
-              <p>
+              <div class="eyebrow" data-lang-block="zh">帳號刪除</div>
+              <div class="eyebrow" data-lang-block="en">Delete account</div>
+              <h1 data-lang-block="zh">帳號刪除與資料刪除說明</h1>
+              <h1 data-lang-block="en">Account and data deletion</h1>
+              <p data-lang-block="zh">
                 如果你想移除 PocketMoney Family 帳號與相關資料，可以透過 App 內的設定頁面進行刪除。
                 刪除完成後，App 會回到登入畫面。
               </p>
+              <p data-lang-block="en">
+                If you want to remove your PocketMoney Family account and related data, you can do so from the app settings.
+                After deletion, the app returns to the sign-in screen.
+              </p>
+              <p class="language-note" data-lang-block="en">English view. Traditional Chinese is the primary language of this site.</p>
             </div>
             <div class="hero-panel">
-              <div class="stat">
+              <div class="stat" data-lang-block="zh">
                 <strong>刪除入口</strong>
                 <span>App 內設定頁的「刪除此小孩與所有資料」或帳號刪除。</span>
               </div>
-              <div class="stat">
+              <div class="stat" data-lang-block="en">
+                <strong>Deletion entry</strong>
+                <span>The in-app settings page includes account deletion and delete-child-with-all-data actions.</span>
+              </div>
+              <div class="stat" data-lang-block="zh">
                 <strong>處理結果</strong>
                 <span>帳號、家庭關聯與相關記錄會一起處理。</span>
+              </div>
+              <div class="stat" data-lang-block="en">
+                <strong>Result</strong>
+                <span>The account, family links, and related records are processed together.</span>
               </div>
             </div>
           </section>
@@ -52,20 +87,33 @@
           <section class="section">
             <div class="grid two">
               <article class="card">
-                <h3>如何刪除</h3>
-                <ul>
+                <h3 data-lang-block="zh">如何刪除</h3>
+                <h3 data-lang-block="en">How to delete</h3>
+                <ul data-lang-block="zh">
                   <li>打開 App。</li>
                   <li>進入設定或帳號管理頁。</li>
                   <li>選擇刪除帳號或刪除小孩與所有資料。</li>
                   <li>依提示完成確認。</li>
                 </ul>
+                <ul data-lang-block="en">
+                  <li>Open the app.</li>
+                  <li>Go to settings or account management.</li>
+                  <li>Choose account deletion or delete child with all data.</li>
+                  <li>Follow the prompts to confirm.</li>
+                </ul>
               </article>
               <article class="card">
-                <h3>刪除後會發生什麼事</h3>
-                <ul>
+                <h3 data-lang-block="zh">刪除後會發生什麼事</h3>
+                <h3 data-lang-block="en">What happens next</h3>
+                <ul data-lang-block="zh">
                   <li>帳號將從系統中移除或標記為已刪除。</li>
                   <li>相關家庭資料與交易資料會依後端流程清理。</li>
                   <li>App 介面會回到登入畫面。</li>
+                </ul>
+                <ul data-lang-block="en">
+                  <li>The account is removed from the system or marked as deleted.</li>
+                  <li>Related family and transaction data is cleaned up by the backend flow.</li>
+                  <li>The app returns to the sign-in screen.</li>
                 </ul>
               </article>
             </div>
@@ -73,10 +121,15 @@
 
           <section class="section">
             <div class="note">
-              <h3>如果刪除遇到問題</h3>
-              <p>
+              <h3 data-lang-block="zh">如果刪除遇到問題</h3>
+              <h3 data-lang-block="en">If deletion fails</h3>
+              <p data-lang-block="zh">
                 請聯絡 <a href="mailto:willsbormac@gmail.com">willsbormac@gmail.com</a>，並提供你的登入 email 與發生時間，
                 方便我們確認後端刪除流程是否成功。
+              </p>
+              <p data-lang-block="en">
+                Please email <a href="mailto:willsbormac@gmail.com">willsbormac@gmail.com</a> with your sign-in email and the time of the issue,
+                so we can check whether the backend deletion flow completed successfully.
               </p>
             </div>
           </section>

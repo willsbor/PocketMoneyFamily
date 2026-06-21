@@ -1,6 +1,6 @@
 # PocketMoney Family Static Site
 
-This repository hosts the public static pages for App Store submission and support.
+This repository hosts the public static pages for PocketMoney Family.
 
 ## Pages
 

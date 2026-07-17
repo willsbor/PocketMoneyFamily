@@ -3,6 +3,9 @@
   const supported = new Set(["zh", "en"]);
 
   function getPreferredLanguage() {
+    const queryLang = new URLSearchParams(window.location.search).get("lang");
+    if (supported.has(queryLang)) return queryLang;
+
     try {
       const saved = window.localStorage.getItem(storageKey);
       if (supported.has(saved)) return saved;
